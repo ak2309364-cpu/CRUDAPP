@@ -1,0 +1,111 @@
+/* 1. Global Reset and Body Styles */
+* {
+    box-sizing: border-box; /* Ensures padding doesn't increase element width */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9; /* Light grey background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    padding-top: 50px;
+    min-height: 100vh;
+}
+
+/* 2. Form Styling */
+#form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    width: 100%;
+    max-width: 400px; /* Prevents form from getting too wide on desktop */
+    margin-bottom: 30px;
+}
+
+/* Labels */
+label {
+    display: block; /* Puts label on its own line */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs */
+input[type="text"] {
+    width: 100%; /* Full width of the container */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Smooth color change on focus */
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50; /* Green border when clicked */
+    outline: none; /* Removes default browser outline */
+}
+
+/* Submit Button */
+#submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Changes cursor to pointer icon */
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* 3. Contact List Container */
+#all-contacts {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* 4. Styling for the dynamically added Contact Cards */
+/* This targets the divs created by your JavaScript inside #all-contacts */
+#all-contacts > div {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 5px solid #4CAF50; /* Green accent line on the left */
+    animation: fadeIn 0.5s ease-in-out; /* Animation when adding a contact */
+}
+
+#all-contacts p {
+    margin: 5px 0;
+    color: #555;
+}
+
+#all-contacts hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0 0 0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 500px) {
+    #form, #all-contacts {
+        width: 90%; /* Slight margin on mobile */
+    }
+}
